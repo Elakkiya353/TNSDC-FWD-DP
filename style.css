@@ -1,0 +1,40 @@
+/* styles.css */
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Star background animation */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black url('https://www.transparenttextures.com/patterns/stardust.png');
+  z-index: -2;
+  animation: starMove 60s linear infinite;
+}
+
+@keyframes starMove {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
+
+/* Rainbow cursor trail */
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  background: radial-gradient(circle, red, orange, yellow, green, blue, indigo, violet);
+  mix-blend-mode: screen;
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.3); }
+}
